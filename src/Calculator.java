@@ -233,8 +233,6 @@ public class Calculator extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("0");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,14 +279,14 @@ public class Calculator extends javax.swing.JFrame {
                                 .addComponent(Sub, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Clear, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(Add, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(5, 5, 5)
                 .addComponent(Box, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,13 +328,13 @@ public class Calculator extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    int num1;
-    int num2;
-    int cal;
-    int result;
-    int memNo;
+    double num1;
+    double num2;
+    double cal;
+    double result;
+    double memNo;
     
-    public int calOp(int cal){
+    public double calOp(int cal){
       switch(cal){
           case 1: result=num1+num2;break;
           case 2: result=num1-num2;break;
@@ -356,7 +354,7 @@ public class Calculator extends javax.swing.JFrame {
     }//GEN-LAST:event_MCActionPerformed
 
     private void MRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MRActionPerformed
-        Box.setText(Integer.toString(memNo));
+        Box.setText(Double.toString(memNo));
     }//GEN-LAST:event_MRActionPerformed
 
     private void No6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_No6ActionPerformed
@@ -390,7 +388,7 @@ public class Calculator extends javax.swing.JFrame {
     private void SumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumActionPerformed
         num2=Integer.parseInt(Box.getText());
         Box.setText("");
-        int re;
+        double re;
         if(jLabel1.getText().equals("+"))
              re=calOp(1);
         else if(jLabel1.getText().equals("-"))
@@ -398,7 +396,7 @@ public class Calculator extends javax.swing.JFrame {
         else if(jLabel1.getText().equals("*"))
              re=calOp(3);
         else re=calOp(4);
-        Box.setText(Integer.toString(re));
+        Box.setText(Double.toString(re));
         
     }//GEN-LAST:event_SumActionPerformed
 
@@ -422,7 +420,7 @@ public class Calculator extends javax.swing.JFrame {
 
     private void ClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearActionPerformed
         Box.setText("");
-        jLabel1.setText("0");
+        jLabel1.setText("");
     }//GEN-LAST:event_ClearActionPerformed
 
     private void BoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxActionPerformed
